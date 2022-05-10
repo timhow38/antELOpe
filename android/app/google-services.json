@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "565124740259",
+    "project_id": "ant-elo-pe",
+    "storage_bucket": "ant-elo-pe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565124740259:android:0c6d838bf403fe1f283b16",
+        "android_client_info": {
+          "package_name": "com.example.antelope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565124740259-togknc4c9oh0sdm7adaj5m20v6s74o7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4reQPg9rF2x4TRWkrDOFryNElcAHXY5o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565124740259-togknc4c9oh0sdm7adaj5m20v6s74o7l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565124740259-u2k21m6p5ffr1sbaqotoqbvv5iufmlck.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.antelope"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
