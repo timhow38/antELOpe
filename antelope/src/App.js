@@ -16,9 +16,11 @@ function App() {
     
     return (
         <div className="App">
+            <form className='frmClimbAction'>
             <Button text="Start a ranked climb" />
             <Button text="Start a casual climb" />
             <Button text="Record a hangboard time" onClick={() => setDoc(someDocRef, { jorts: 'Bad' })}/>
+            </form>
         </div>
     );
 }
