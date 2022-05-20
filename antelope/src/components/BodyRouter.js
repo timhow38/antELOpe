@@ -6,7 +6,7 @@ import AppContext from './AppContext';
 import { useContext } from 'react';
 
 function BodyRouter(props) {
-    let context = useContext(AppContext);
+    let [context, setContext] = useContext(AppContext);
     console.log('Router has context');
     console.log(context);
     return <>
@@ -21,17 +21,12 @@ function BodyRouter(props) {
                         return context.user && <>
                             <RoutingButton text="Start a ranked climb" routeTarget={'rankedClimb'} />
                             <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
-                            <Button text="Record a hangboard time" onClick={() => { props.user.events.push(new HangboardTime(60)); props.user.persist(); }} />
+                            <Button text="Record a hangboard time" onClick={() => { context.user.events.push(new HangboardTime(60)); context.user.persist(); }} />
                         </>
                 }
             })()}
         </div>
     </>
-}
-
-function RenderSwitch(route, user) {
-    
-
 }
 
 export default BodyRouter;
