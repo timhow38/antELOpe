@@ -4,18 +4,17 @@ import BodyRouter from './components/BodyRouter';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import config from './config';
-import React, { useState } from 'react'
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import React, { useState, useContext } from 'react'
 import User from './data/User';
+import AppContext from './components/AppContext';
 
 const firebaseApp = initializeApp(config);
 const db = getFirestore(firebaseApp);
 
+
 function App() {
     let userName = useState('');
-    let [user, setUser] = useState(null);
-    const route = useState(null);
-
+    let context = useContext(AppContext);
     function handleUserNameChange(event) {
         userName = event.target.value;
         if (userName)
@@ -23,8 +22,8 @@ function App() {
     }
 
     async function retrieveUserData(userName) {
-        let u = await User.fromFireStore(db, userName)
-        setUser(u);
+        let u = await User.fromFirestore(db, userName);
+        context.user = u;
         if (!u)
             alert("Couldn't find that user");
     }
@@ -32,7 +31,7 @@ function App() {
     return (
         <div className="App">
             <Header onNameEntered={handleUserNameChange} />
-            <BodyRouter currentRoute={route} user={user} />
+            <BodyRouter/>
         </div>
     );
 }

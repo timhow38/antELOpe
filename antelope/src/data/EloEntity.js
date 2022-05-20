@@ -1,8 +1,8 @@
 import { IdMappedObject } from './ObjectDatastoreMapping';
 
 class EloEntity extends IdMappedObject {
-    constructor(id, baseRating, events) {
-        super(id);
+    constructor(db, id, baseRating, events) {
+        super(db, id);
         this.baseRating = baseRating ?? 1000;
         this.events = events ?? [];
     }
