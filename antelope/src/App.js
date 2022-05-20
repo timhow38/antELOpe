@@ -32,13 +32,14 @@ function App() {
 
     return (
         <div className="App">
-            <input type='text' placeholder='Enter your name' onChange={handleUserNameChange} />
-            <Button text="Start a ranked climb" />
-            <Button text="Start a casual climb" />
-            <Button text="Record a hangboard time"/>
+            <form className='frmClimbAction'>
+                <input type='text' placeholder='Enter your name' onChange={handleUserNameChange} />
+                <Button text="Start a ranked climb" />
+                <Button text="Start a casual climb" />
+                <Button text="Record a hangboard time"/>
+            </form>
         </div>
     );
 }
-
 
 export default App;
