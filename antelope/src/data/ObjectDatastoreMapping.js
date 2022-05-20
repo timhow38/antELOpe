@@ -1,8 +1,7 @@
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
 class IdMappedObject {
-	constructor(db, id) {
-		this.db = db;
+	constructor(id) {
 		this.id = id;
 	}
 
@@ -16,30 +15,24 @@ class IdMappedObject {
 	toDoc() {
 		let pseudoObj = {};
 		for (const prop in this) {
-			if (!(prop == 'id' || prop == 'collectionId' || prop == 'db')) {
+			if (!(prop == 'id' || prop == 'collectionId')) {
 				pseudoObj[prop] = DeepMapToPojo(this[prop]);
 			}
 		}
 		return pseudoObj;
 	}
 
-	static getDocRef(db, id) {
-		return doc(db, this.collectionId, id);
-	}
-
 	static async fromFirestore(db, id) {
-		let docRef = this.getDocRef(db, id);
-		let docSnap = await getDoc(docRef);
+		let docSnap = await getDoc(doc(db, this.collectionId, id));
 		if (!docSnap.exists())
 			return null;
-		let obj = new this(db, id);
+		let obj = new this(id);
 		obj.fillFromDoc(docSnap);
 		return obj;
 	}
 
-	persist() {
-		let docRef = this.constructor.getDocRef(this.db, this.id);
-		setDoc(docRef, this.toDoc(), { merge: true });
+	persist(db) {
+		setDoc(doc(db, this.constructor.collectionId, this.id), this.toDoc(), { merge: true });
 	}
 }
 

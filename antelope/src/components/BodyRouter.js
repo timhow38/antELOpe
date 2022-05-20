@@ -7,8 +7,6 @@ import { useContext } from 'react';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
-    console.log('Router has context');
-    console.log(context);
     return <>
         <div id='pageBody'>
             {(() => {
@@ -21,7 +19,7 @@ function BodyRouter(props) {
                         return context.user && <>
                             <RoutingButton text="Start a ranked climb" routeTarget={'rankedClimb'} />
                             <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
-                            <Button text="Record a hangboard time" onClick={() => { context.user.events.push(new HangboardTime(60)); context.user.persist(); }} />
+                            <Button text="Record a hangboard time" onClick={() => { context.user.events.push(new HangboardTime(60)); context.user.persist(context.db); }} />
                         </>
                 }
             })()}
