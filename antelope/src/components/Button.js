@@ -2,7 +2,7 @@ import '../compStyles/button.css';
 
 function Button(props) {
     let defaultOnClick = () => alert("Not yet implemented")
-    return <div className='button' onClick={props.onClick ?? defaultOnClick}>{props.text}</div>;
+    return <button className='button' onClick={props.onClick ?? defaultOnClick} disabled={props.disabled}>{props.text}</button>;
 }
 
 export default Button;
