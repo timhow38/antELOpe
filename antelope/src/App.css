@@ -1,91 +1,134 @@
+/* 
+|*************************************************************************;
+* ScriptName    : CSS Global Root  
+* ScriptPath    : /src/app.css
+|*************************************************************************;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+/*
+|*************************************************************************;
+* Stylesheets Global Var
+|*************************************************************************;
+*/
+
+:root {
+    /*--main-font: "VT323", monospace; */
+    --main-font: 'Roboto Mono', monospace;
+    /*font-family: 'Poppins', sans-serif;*/
+    --sub-font: 'Roboto Mono', monospace;
+    /* Color */
+    --style-01: #284b63;
+    --style-02: #284b63;
+    --style-03: #fff;
+    --style-04: #fff;
+    /* Base Properties */
+    /* Cursor Setting */
+    --main-cursor-default: default;
+    --main-cursor-grab: grab;
+    --main-cursor-grabbing: grabbing;
+    --main-cursor-pointer: pointer;
+    --main-cursor-text: text;
+    /* Text Settings */
+    --main-text-shadow: 0px 0px 4px rgb(0, 0, 0);
+    --panel-color: rgba(0, 0, 0, 0.135);
+    /* Default Box Shadow */
+    --webkit-bs-default: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    --moz-bs-default: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    --box-bs-default: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Inset Box Shadow */
+    --webkit-bs-inset: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    --moz-bs-inset: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    --box-bs-inset: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    /* Border Properties */
+    --border-radius-none: 0rem;
+    --border-radius: 3px;
+    /* Scale Properties Properties */
+    --prop-scale-norm: scale(1);
+    --prop-scale-moz: scale(1);
+    --prop-scale-ms: scale(1);
+    --prop-scale-webkit: scale(1);
+}
+
+
+/*
+|*************************************************************************;
+* Page Properties 
+|*************************************************************************;
+*/
+
+
+/* Remove Body Scroll */
+
+::-webkit-scrollbar {
+    width: 0px;
+    /* remove scrollbar space */
+    background: transparent;
+    /* optional: just make scrollbar invisible */
+}
+
+@-moz-document url-prefix() {
+    html,
+    body {
+        overflow: hidden !important;
+    }
+}
+
+
+/* Remove Body Text Highlight */
+
+::selection {
+    color: none;
+    background: none;
+}
+
+
+/* For Mozilla Firefox */
+
+::-moz-selection {
+    color: none;
+    background: none;
+}
+
 body {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
-
-/* btn */
-.button {
- align-items: center;
- appearance: none;
- background-color: #FCFCFD;
- border-radius: 4px;
- border-width: 0;
- box-shadow: rgba(45, 35, 66, 0.2) 0 2px 4px,rgba(45, 35, 66, 0.15) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
- box-sizing: border-box;
- color: #36395A;
- cursor: pointer;
- display: inline-flex;
- font-family: "JetBrains Mono",monospace;
- height: 48px;
- justify-content: center;
- line-height: 1;
- list-style: none;
- overflow: hidden;
- padding-left: 16px;
- padding-right: 16px;
- position: relative;
- text-align: left;
- text-decoration: none;
- transition: box-shadow .15s,transform .15s;
- user-select: none;
- -webkit-user-select: none;
- touch-action: manipulation;
- white-space: nowrap;
- will-change: box-shadow,transform;
- font-size: 18px;
-}
-
-.button:focus {
- box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-}
-
-.button:hover {
- box-shadow: rgba(45, 35, 66, 0.3) 0 4px 8px, rgba(45, 35, 66, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-
-}
-
-.button:active {
- box-shadow: #D6D6E7 0 3px 7px inset;
- transform: translateY(2px);
-}
-
-
-
 
 
 /* Check over after merge */
 
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
-
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
