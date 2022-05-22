@@ -6,7 +6,6 @@ function History(props) {
         return new Date(timeStr).toISOString().substring(0, 19);
     }
     let [context, setContext] = useContext(AppContext);
-    console.log(context.user.events);
     return <>
         <h2>Ranked Climbs</h2>
         {context.user.events

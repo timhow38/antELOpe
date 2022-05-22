@@ -4,6 +4,7 @@ import HangboardTime from './../data/HangboardTime';
 import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
+import GetClimbForm from './EditClimbForm';
 import { useContext } from 'react';
 
 function BodyRouter(props) {
@@ -25,7 +26,9 @@ function BodyRouter(props) {
                                 <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
                                 <Button text="Record a hangboard time" onClick={() => { context.user.events.push(new HangboardTime(60)); context.user.persist(context.db); }} />
                             </div>
-                            <RoutingButton text="My History" routeTarget={'history'} />
+                            <div>
+                                <RoutingButton text="My History" routeTarget={'history'} />
+                            </div>
                         </>
                 }
             })()}
