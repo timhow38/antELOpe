@@ -5,6 +5,8 @@ import AppContext from './AppContext';
 import History from './History';
 import { useContext } from 'react';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
@@ -23,13 +25,17 @@ function BodyRouter(props) {
                         return <History />
                     default:
                         return context.user && <>
-                            <div>
-                                <RoutingButton text="Start a ranked climb" routeTarget={'rankedClimb'} />
-                                <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
-                                <RoutingButton text="Time a hangboard hang" routeTarget={'hangboardTimer'} />
+                            <div className='btnGroup01'>
+                            <Stack direction="row" spacing={2}>
+                                <RoutingButton text="Ranked Climb" routeTarget={'rankedClimb'} />
+                                <RoutingButton text="Casual Climb" routeTarget={'casualClimb'} />
+                                <RoutingButton text="Hangboard Timer" routeTarget={'hangboardTimer'} />
+                            </Stack>
                             </div>
-                            <div>
+                            <div className='btnGroup02'>
+                            <Stack direction="row" spacing={2}>
                                 <RoutingButton text="My History" routeTarget={'history'} />
+                            </Stack>
                             </div>
                         </>
                 }

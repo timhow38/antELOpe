@@ -1,7 +1,7 @@
 import AppContext from './AppContext';
 import { useContext } from 'react';
 import User from './../data/User';
-import TextField from '@mui/material/TextField';
+import TextField from '@mui/material/TextField'; 
 
 export default function Login(props) {
     let [context, setContext] = useContext(AppContext);
@@ -20,5 +20,5 @@ export default function Login(props) {
             alert("Couldn't find that user");
     }
 
-    return <TextField id="outlined-basic" label="Outlined" variant="outlined" className='btn-login' type='text' placeholder='Enter your name' onBlur={handleUserNameChange} value={userName} />
+    return <TextField id="outlined-basic" label="Enter Name" variant="outlined" className='btn-login' type='text' placeholder='Enter your name' onBlur={handleUserNameChange} value={userName} />
 }

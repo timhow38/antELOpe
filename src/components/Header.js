@@ -7,7 +7,6 @@ function Header(props) {
         <div id='navHeader'>
             <RoutingButton text='Back home' routeTarget='' />
             <Login />
-            
             <CurrentElo />
         </div>
     </>

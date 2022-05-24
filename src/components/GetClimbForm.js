@@ -3,6 +3,7 @@ import BasicButtons from './Button';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
+import TextField from '@mui/material/TextField'; 
 
 function GetClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -45,8 +46,8 @@ function GetClimbForm(props) {
     return <>
         {props.title && <div>Edit a Climb</div>}
         {!climb && <>
-            <input placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
-            <input placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
+            <TextField id="outlined-basic" label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
+            <TextField id="outlined-basic" label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
         </>
         }
         {

@@ -7,6 +7,7 @@ import { getFirestore } from 'firebase/firestore';
 import AppContext from './components/AppContext';
 import config from './config';
 
+
 export default function App() {
     let firebaseApp = initializeApp(config);
     let [context, setContext] = useState({
