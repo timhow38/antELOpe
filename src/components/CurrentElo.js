@@ -6,7 +6,6 @@ function CurrentElo(props) {
 	let [context, setContext] = useContext(AppContext);
 	let elo;
 
-
 	if (context.user) {
 		elo = reduceElo(context.user.events.filter(i => i.type === 'ClimbAttempt' && i.ranked), context.user.baseRating);
 	}

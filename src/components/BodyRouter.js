@@ -1,10 +1,8 @@
-import Button from './Button';
 import RoutingButton from './RoutingButton';
-import HangboardTime from './../data/HangboardTime';
+import HangboardTimer from './HangboardTimer';
 import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
-import GetClimbForm from './EditClimbForm';
 import { useContext } from 'react';
 
 function BodyRouter(props) {
@@ -17,6 +15,8 @@ function BodyRouter(props) {
                         return <ClimbAttemptForm ranked={true} />
                     case 'casualClimb':
                         return <ClimbAttemptForm ranked={false} />
+                    case 'hangboardTimer':
+                        return <HangboardTimer />
                     case 'history':
                         return <History />
                     default:
@@ -24,7 +24,7 @@ function BodyRouter(props) {
                             <div>
                                 <RoutingButton text="Start a ranked climb" routeTarget={'rankedClimb'} />
                                 <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
-                                <Button text="Record a hangboard time" onClick={() => { context.user.events.push(new HangboardTime(60)); context.user.persist(context.db); }} />
+                                <RoutingButton text="Time a hangboard hang" routeTarget={'hangboardTimer'} />
                             </div>
                             <div>
                                 <RoutingButton text="My History" routeTarget={'history'} />
