@@ -6,10 +6,26 @@ function EditClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
     let climb = props.climb;
 
-    let [grade, setGrade] = useState('');
+    let [grade, setGrade] = useState(climb.grade ?? '');
+
 
     function validate() {
         return climb.rope && climb.colour && climb.grade;
+    }
+
+    function save() {
+        if (validate()) {
+            climb.persist(context.db);
+            if (props.successCallback)
+                props.successCallback(climb);
+        } else {
+            alert("Please fill all inputs");
+        }
+    }
+
+    function cancel() {
+        if (props.failCallback)
+            props.failCallback();
     }
 
     return <div>
@@ -22,15 +38,8 @@ function EditClimbForm(props) {
                 setGrade(e.target.value);
             }} />
         </div>
-        <Button text='Save' onClick={() => {
-            if (validate()) {
-                climb.persist(context.db);
-                props.successCallback(climb);
-            } else {
-                alert("Please fill all inputs");
-            }
-        }} />
-        <Button text='Cancel' onClick={() => props.failCallback()} />
+        <Button text='Save' onClick={() => save()} />
+        <Button text='Cancel' onClick={() => cancel()} />
     </div>
 }
 
