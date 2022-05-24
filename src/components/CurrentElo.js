@@ -10,7 +10,6 @@ function CurrentElo(props) {
 	}
 
 	function getNextElo(thisElo, otherElo, outcome, developmentCoefficient) {
-		console.log(thisElo, otherElo, outcome, developmentCoefficient);
 		return thisElo + (developmentCoefficient * (outcome - winProbability(thisElo, otherElo)));
 	}
 
