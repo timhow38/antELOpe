@@ -3,6 +3,7 @@ import HangboardTimer from './HangboardTimer';
 import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
+import LeaderBoards from './LeaderBoards';
 import { useContext } from 'react';
 
 function BodyRouter(props) {
@@ -19,6 +20,8 @@ function BodyRouter(props) {
                         return <HangboardTimer />
                     case 'history':
                         return <History />
+                    case 'leaderBoards':
+                        return <LeaderBoards />
                     default:
                         return context.user && <>
                             <div>
@@ -28,6 +31,7 @@ function BodyRouter(props) {
                             </div>
                             <div>
                                 <RoutingButton text="My History" routeTarget={'history'} />
+                                <RoutingButton text="Leaderboards" routeTarget={'leaderBoards'} />
                             </div>
                         </>
                 }
