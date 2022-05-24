@@ -4,9 +4,10 @@ import CurrentElo from './CurrentElo';
 
 function Header(props) {
     return <>
-        <div id='header'>
+        <div id='navHeader'>
             <RoutingButton text='Back home' routeTarget='' />
             <Login />
+            
             <CurrentElo />
         </div>
     </>

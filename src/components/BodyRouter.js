@@ -4,10 +4,12 @@ import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
 import { useContext } from 'react';
+import Paper from '@mui/material/Paper';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
     return <>
+        <Paper elevation={3}>
         <div id='pageBody'>
             {(() => {
                 switch (context.route) {
@@ -33,6 +35,7 @@ function BodyRouter(props) {
                 }
             })()}
         </div>
+        </Paper>
     </>
 }
 

@@ -7,7 +7,7 @@ import { getFirestore } from 'firebase/firestore';
 import AppContext from './components/AppContext';
 import config from './config';
 
-function App() {
+export default function App() {
     let firebaseApp = initializeApp(config);
     let [context, setContext] = useState({
         user: null,
@@ -17,10 +17,11 @@ function App() {
 
     return (
         <AppContext.Provider className="App" value={[context, setContext]}>
+          <div className="pageWrap">
+
             <Header />
             <BodyRouter/>
+          </div>
         </AppContext.Provider>
     );
 }
-
-export default App;

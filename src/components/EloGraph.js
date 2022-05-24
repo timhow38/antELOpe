@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-luxon';
 import './../styles/EloGraph.css';
 
-function EloGraph(props) {
+export default function EloGraph(props) {
     let history = reduceEloHistory(props.events, props.baseRating);
 
 
@@ -93,9 +93,9 @@ function EloGraph(props) {
                 grid: {
                     color: function (context) {
                         if (context.tick.value % 1 === 0) {
-                            return 'rgba(75, 192, 192, 1)';
+                            return 'rgba(255, 255, 255, 1)';
                         } else {
-                            return 'rgba(75, 192, 192, 0.2)';
+                            return 'rgba(255, 255, 255, 0.2)';
                         }
                     }
                 }
@@ -136,9 +136,9 @@ function EloGraph(props) {
             }
         }
     }]
-    return <div className='eloGraph'>
+    return (
+        <div className='eloGraph'>
         <Line data={data} options={options} plugins={plugins} />
-    </div>
+        </div>
+    );
 }
-
-export default EloGraph;

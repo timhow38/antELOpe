@@ -1,6 +1,6 @@
 import AppContext from './AppContext';
 import { useState, useContext } from 'react';
-import Button from './Button';
+import BasicButtons from './Button';
 
 function EditClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -22,7 +22,7 @@ function EditClimbForm(props) {
                 setGrade(e.target.value);
             }} />
         </div>
-        <Button text='Save' onClick={() => {
+        <BasicButtons text='Save' onClick={() => {
             if (validate()) {
                 climb.persist(context.db);
                 props.successCallback(climb);
@@ -30,7 +30,7 @@ function EditClimbForm(props) {
                 alert("Please fill all inputs");
             }
         }} />
-        <Button text='Cancel' onClick={() => props.failCallback()} />
+        <BasicButtons text='Cancel' onClick={() => props.failCallback()} />
     </div>
 }
 

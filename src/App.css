@@ -5,7 +5,8 @@
 |*************************************************************************;
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /*
 |*************************************************************************;
@@ -60,30 +61,18 @@
 
 
 /* Remove Body Scroll */
-
 ::-webkit-scrollbar {
     width: 0px;
     /* remove scrollbar space */
     background: transparent;
     /* optional: just make scrollbar invisible */
 }
-
-@-moz-document url-prefix() {
-    html,
-    body {
-        overflow: hidden !important;
-    }
-}
-
-
 /* Remove Body Text Highlight */
 
 ::selection {
     color: none;
     background: none;
 }
-
-
 /* For Mozilla Firefox */
 
 ::-moz-selection {
@@ -91,44 +80,77 @@
     background: none;
 }
 
+
+@-moz-document url-prefix() {
+    html,
+    body {
+        overflow: hidden !important;
+    }
+}
+html,
 body {
     background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    color: #fff;
+    font-family: var(--main-font);
+}
+h1, h2, h3, p, a, div, input{
+    color: #fff; 
+    font-family: var(--main-font);
+}
+ 
+#root {
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.pageWrap {
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
+    padding: 15px;
+}
+
+/* When the browser is at least 600px and above */
+@media screen and (min-width: 1000px) {
+    #root {
+        max-width: 50%;
+    }
+  }
+
+#pageBody {
+    padding: 15px;
+    background-color: #1d2025;
+}
+
+.module__item {
     align-items: center;
+    display: flex;
+    height: 20%;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
+  }
 
 
-/* Check over after merge */
 
-.App {
-    text-align: center;
-}
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
+  /* Grids */
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
+  #navHeader {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "btn-nav btn-login"
+      "str-score str-score";
+  }
+  
+  .btn-nav { grid-area: btn-nav; }
+  
+  .btn-login { grid-area: btn-login; }
+  
+  .str-score { grid-area: str-score; }
 
-.App-link {
-    color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
+  

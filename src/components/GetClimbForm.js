@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import Button from './Button';
+import BasicButtons from './Button';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
@@ -51,7 +51,7 @@ function GetClimbForm(props) {
         }
         {
             newClimb && !climb && <div>
-                <Button text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
+                <BasicButtons text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
             </div>
         }
         {
