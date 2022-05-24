@@ -1,4 +1,4 @@
-import '../compStyles/button.css';
+import './../styles/Button.css';
 
 function Button(props) {
     let defaultOnClick = () => alert("Not yet implemented")
