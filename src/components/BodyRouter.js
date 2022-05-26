@@ -4,6 +4,7 @@ import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
 import LeaderBoards from './LeaderBoards';
+import EditClimbs from './EditClimbs';
 import { useContext } from 'react';
 
 function BodyRouter(props) {
@@ -22,6 +23,8 @@ function BodyRouter(props) {
                         return <History />
                     case 'leaderBoards':
                         return <LeaderBoards />
+                    case 'editClimbs':
+                        return <EditClimbs />
                     default:
                         return context.user && <>
                             <div>
@@ -32,6 +35,9 @@ function BodyRouter(props) {
                             <div>
                                 <RoutingButton text="My History" routeTarget={'history'} />
                                 <RoutingButton text="Leaderboards" routeTarget={'leaderBoards'} />
+                            </div>
+                            <div>
+                                <RoutingButton text="Edit Climbs" routeTarget={'editClimbs'} />
                             </div>
                         </>
                 }
