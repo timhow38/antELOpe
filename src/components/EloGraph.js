@@ -137,7 +137,7 @@ export default function EloGraph(props) {
         }
     }]
     return <>
-        <div className='eloGraph'>
+        <div className='elo-graph'>
             <Line data={data} options={options} plugins={plugins} />
         </div>
     </>
