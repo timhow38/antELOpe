@@ -1,4 +1,4 @@
-import BasicButton from './Button';
+import BasicButton from './BasicButton';
 import { useState, useEffect, useContext } from 'react';
 import AppContext from './AppContext';
 import HangboardTime from '../data/HangboardTime';

@@ -1,6 +1,6 @@
 import AppContext from './AppContext';
 import { useState, useContext } from 'react';
-import BasicButton from './Button';
+import BasicButton from './BasicButton';
 import TextField from '@mui/material/TextField';
 
 function EditClimbForm(props) {

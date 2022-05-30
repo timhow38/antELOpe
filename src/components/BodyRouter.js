@@ -23,18 +23,14 @@ function BodyRouter(props) {
                         return <History />
                     default:
                         return context.user && <>
-                            <div className='btnGroup01'>
                             <Stack direction="row" spacing={2}>
                                 <RoutingButton text="Ranked Climb" routeTarget={'rankedClimb'} />
                                 <RoutingButton text="Casual Climb" routeTarget={'casualClimb'} />
                                 <RoutingButton text="Hangboard Timer" routeTarget={'hangboardTimer'} />
                             </Stack>
-                            </div>
-                            <div className='btnGroup02'>
                             <Stack direction="row" spacing={2}>
                                 <RoutingButton text="My History" routeTarget={'history'} />
                             </Stack>
-                            </div>
                         </>
                 }
             })()}

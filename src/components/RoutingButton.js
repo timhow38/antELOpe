@@ -1,4 +1,4 @@
-import BasicButton from './Button';
+import BasicButton from './BasicButton';
 import AppContext from './AppContext';
 import { useContext } from 'react';
 

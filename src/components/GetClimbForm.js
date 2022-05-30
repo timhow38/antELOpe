@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import BasicButton from './Button';
+import BasicButton from './BasicButton';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';

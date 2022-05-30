@@ -1,4 +1,4 @@
-import BasicButton from './Button';
+import BasicButton from './BasicButton';
 import { useState } from 'react';
 import ClimbAttempt from './../data/ClimbAttempt';
 import AppContext from './AppContext';
