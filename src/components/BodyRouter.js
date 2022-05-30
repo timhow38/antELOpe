@@ -3,6 +3,8 @@ import HangboardTimer from './HangboardTimer';
 import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
+import LeaderBoards from './LeaderBoards';
+import EditClimbs from './EditClimbs';
 import { useContext } from 'react';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -21,6 +23,10 @@ function BodyRouter(props) {
                         return <HangboardTimer />
                     case 'history':
                         return <History />
+                    case 'leaderBoards':
+                        return <LeaderBoards />
+                    case 'editClimbs':
+                        return <EditClimbs />
                     default:
                         return context.user && <>
                             <Stack direction="row" spacing={2}>
@@ -30,6 +36,8 @@ function BodyRouter(props) {
                             </Stack>
                             <Stack direction="row" spacing={2}>
                                 <RoutingButton text="My History" routeTarget={'history'} />
+                                <RoutingButton text="Leaderboards" routeTarget={'leaderBoards'} />
+                                <RoutingButton text="Edit Climbs" routeTarget={'editClimbs'} />
                             </Stack>
                         </>
                 }

@@ -25,7 +25,11 @@ function reduceEloHistory(events, baseRating) {
 
 function reduceElo(events, baseRating) {
 	let history = reduceEloHistory(events, baseRating);
-	return history[history.length - 1].currentElo;
+	return history[history.length - 1]?.currentElo ?? baseRating;
 }
 
-export { getNextElo, reduceEloHistory, reduceElo };
+function eloToGrade(elo) {
+	return (elo / 100).toFixed(2);
+}
+
+export { getNextElo, reduceEloHistory, reduceElo, eloToGrade };

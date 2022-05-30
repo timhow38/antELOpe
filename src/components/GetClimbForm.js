@@ -21,20 +21,15 @@ function GetClimbForm(props) {
         if (!c)
             setNewClimb(true);
         else {
-            props.callback(c);
+            setClimb(c);
+            if (props.callback)
+                props.callback(c);
         }
     }
 
     function addNewClimb() {
         let c = new Climb(rope + '-' + colour, rope, colour, 15, []);
         setClimb(c);
-    }
-
-    function reset() {
-        setRope('');
-        setColour('');
-        setGrade('');
-        setClimb(null);
     }
 
     function gotClimb(climb) {
@@ -56,7 +51,7 @@ function GetClimbForm(props) {
             </div>
         }
         {
-            newClimb && climb && <EditClimbForm climb={climb} failCallback={reset} successCallback={gotClimb}/>
+            climb && <EditClimbForm climb={climb} successCallback={gotClimb} failCallback={() => setClimb(null)}/>
         }
     </>;
 
