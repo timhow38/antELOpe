@@ -12,7 +12,7 @@ import Stack from '@mui/material/Stack';
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
     return <>
-        <Paper id='pageBody' elevation={3}>
+        <Paper id='page-body' elevation={3}>
             {(() => {
                 switch (context.route) {
                     case 'rankedClimb':

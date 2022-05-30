@@ -8,7 +8,7 @@ import AppContext from './components/AppContext';
 import config from './config';
 
 
-export default function App() {
+function App() {
     let firebaseApp = initializeApp(config);
     let [context, setContext] = useState({
         user: null,
@@ -26,3 +26,5 @@ export default function App() {
         </AppContext.Provider>
     );
 }
+
+export default App;
