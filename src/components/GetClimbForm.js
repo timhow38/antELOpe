@@ -1,8 +1,9 @@
 import { useState, useContext } from 'react';
-import Button from './Button';
+import BasicButton from './BasicButton';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
+import TextField from '@mui/material/TextField'; 
 
 function GetClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -40,13 +41,13 @@ function GetClimbForm(props) {
     return <>
         {props.title && <div>Edit a Climb</div>}
         {!climb && <>
-            <input placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
-            <input placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
+            <TextField label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
+            <TextField label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
         </>
         }
         {
             newClimb && !climb && <div>
-                <Button text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
+                <BasicButton text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
             </div>
         }
         {

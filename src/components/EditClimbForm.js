@@ -1,6 +1,7 @@
 import AppContext from './AppContext';
 import { useState, useContext } from 'react';
-import Button from './Button';
+import BasicButton from './BasicButton';
+import TextField from '@mui/material/TextField';
 
 function EditClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -32,14 +33,15 @@ function EditClimbForm(props) {
         <div >Rope: {climb.rope}</div>
         <div >Colour: {climb.colour}</div>
         <div >Grade:
-            <input value={grade} onChange={(e) => {
+            <TextField variant="outlined" value={grade} onChange={(e) => {
                 climb.grade = e.target.value;
                 climb.baseRating = e.target.value * 100;
                 setGrade(e.target.value);
             }} />
         </div>
-        <Button text='Save' onClick={() => save()} />
-        <Button text='Cancel' onClick={() => cancel()} />
+
+        <BasicButton text='Save' onClick={() => save()} />
+        <BasicButton text='Cancel' onClick={() => cancel()} />
     </div>
 }
 
