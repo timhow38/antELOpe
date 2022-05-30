@@ -94,7 +94,7 @@ body {
     font-family: var(--main-font);
 }
 h1, h2, h3, p, a, div, input{
-    color: #fff!important; 
+    color: #fff !important;
     font-family: var(--main-font);
 }
  
@@ -113,7 +113,7 @@ h1, h2, h3, p, a, div, input{
     text-align: center;
 }
 
-/* When the browser is at least 600px and above */
+/* When the browser is at least 1000px and above set #root max width to half the page */
 @media screen and (min-width: 1000px) {
     #root {
         max-width: 50%;
@@ -123,11 +123,6 @@ h1, h2, h3, p, a, div, input{
 #pageBody {
     padding: 15px;
     background-color: #1d2025;
-    /*
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    */
 }
 
 .module-item {
@@ -141,15 +136,15 @@ h1, h2, h3, p, a, div, input{
 
 
   /* Grids */
-
-  #nav-header {  display: grid;
+  #nav-header {  
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 5px 5px;
     grid-auto-flow: row;
     grid-template-areas:
-      "btn-nav btn-login"
-      "str-score str-score";
+    "btn-nav btn-login"
+    "str-score str-score";
   }
   
   .btn-nav { grid-area: btn-nav; }
