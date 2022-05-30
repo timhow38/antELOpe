@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import User from './../data/User';
 import TextField from '@mui/material/TextField'; 
 
-export default function Login(props) {
+function Login(props) {
     let [context, setContext] = useContext(AppContext);
     let userName;
 
@@ -22,3 +22,4 @@ export default function Login(props) {
 
     return <TextField label="Enter Name" variant="outlined" className='btn-login' type='text' placeholder='Enter your name' onBlur={handleUserNameChange} value={userName} />
 }
+export default Login;

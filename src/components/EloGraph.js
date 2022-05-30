@@ -4,7 +4,7 @@ import { Line } from 'react-chartjs-2';
 import 'chartjs-adapter-luxon';
 import './../styles/EloGraph.css';
 
-export default function EloGraph(props) {
+function EloGraph(props) {
     let history = reduceEloHistory(props.events, props.baseRating);
 
 
@@ -142,3 +142,4 @@ export default function EloGraph(props) {
         </div>
     </>
 }
+export default EloGraph;
