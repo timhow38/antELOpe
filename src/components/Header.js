@@ -1,6 +1,7 @@
 import RoutingButton from './RoutingButton';
 import Login from './Login';
 import CurrentElo from './CurrentElo';
+import DoubleSpinner from './DoubleSpinner';
 
 function Header(props) {
     return <>
@@ -8,6 +9,7 @@ function Header(props) {
             <RoutingButton text='Back home' routeTarget='' />
             <Login />
             <CurrentElo />
+            <DoubleSpinner />
         </div>
     </>
 }
