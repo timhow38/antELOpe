@@ -1,6 +1,6 @@
 import AppContext from './AppContext';
 import { useState, useContext } from 'react';
-import BasicButtons from './Button';
+import BasicButton from './Button';
 import TextField from '@mui/material/TextField';
 
 function EditClimbForm(props) {
@@ -17,13 +17,13 @@ function EditClimbForm(props) {
         <div >Rope: {climb.rope}</div>
         <div >Colour: {climb.colour}</div>
         <div >Grade:
-            <TextField id="outlined-basic" variant="outlined" value={grade} onChange={(e) => {
+            <TextField variant="outlined" value={grade} onChange={(e) => {
                 climb.grade = e.target.value;
                 climb.baseRating = e.target.value * 100;
                 setGrade(e.target.value);
             }} />
         </div>
-        <BasicButtons text='Save' onClick={() => {
+        <BasicButton text='Save' onClick={() => {
             if (validate()) {
                 climb.persist(context.db);
                 props.successCallback(climb);
@@ -31,7 +31,7 @@ function EditClimbForm(props) {
                 alert("Please fill all inputs");
             }
         }} />
-        <BasicButtons text='Cancel' onClick={() => props.failCallback()} />
+        <BasicButton text='Cancel' onClick={() => props.failCallback()} />
     </div>
 }
 

@@ -5,14 +5,12 @@ import AppContext from './AppContext';
 import History from './History';
 import { useContext } from 'react';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
     return <>
-        <Paper elevation={3}>
-        <div id='pageBody'>
+        <Paper id='pageBody' elevation={3}>
             {(() => {
                 switch (context.route) {
                     case 'rankedClimb':
@@ -40,7 +38,6 @@ function BodyRouter(props) {
                         </>
                 }
             })()}
-        </div>
         </Paper>
     </>
 }

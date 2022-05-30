@@ -2,7 +2,6 @@ import AppContext from './AppContext';
 import { useContext } from 'react';
 import EloGraph from './EloGraph';
 
-
 function History(props) {
     function transformTime(timeStr) {
         return new Date(timeStr).toISOString().substring(0, 19);
@@ -12,7 +11,6 @@ function History(props) {
     let rankedClimbs = context.user.events.filter(event => event.type === 'ClimbAttempt' && event.ranked);
 
     return <>
-    
         <h2>Ranked Climbs</h2>
         <EloGraph events={rankedClimbs} baseRating={context.user.baseRating} />
         <h2>Casual Climbs</h2>

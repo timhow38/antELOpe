@@ -1,7 +1,7 @@
 import './../styles/Button.css';
 import Button from '@mui/material/Button';
 
-export default function BasicButtons(props) {
+export default function BasicButton(props) {
     let defaultOnClick = () => alert("Not yet implemented")
     return (
     <Button 

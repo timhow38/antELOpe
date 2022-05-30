@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import BasicButtons from './Button';
+import BasicButton from './Button';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
@@ -46,13 +46,13 @@ function GetClimbForm(props) {
     return <>
         {props.title && <div>Edit a Climb</div>}
         {!climb && <>
-            <TextField id="outlined-basic" label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
-            <TextField id="outlined-basic" label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
+            <TextField label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
+            <TextField label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
         </>
         }
         {
             newClimb && !climb && <div>
-                <BasicButtons text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
+                <BasicButton text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
             </div>
         }
         {

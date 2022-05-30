@@ -20,5 +20,5 @@ export default function Login(props) {
             alert("Couldn't find that user");
     }
 
-    return <TextField id="outlined-basic" label="Enter Name" variant="outlined" className='btn-login' type='text' placeholder='Enter your name' onBlur={handleUserNameChange} value={userName} />
+    return <TextField label="Enter Name" variant="outlined" className='btn-login' type='text' placeholder='Enter your name' onBlur={handleUserNameChange} value={userName} />
 }

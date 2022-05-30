@@ -130,7 +130,7 @@ h1, h2, h3, p, a, div, input{
     */
 }
 
-.module__item {
+.module-item {
     align-items: center;
     display: flex;
     height: 20%;
@@ -142,7 +142,7 @@ h1, h2, h3, p, a, div, input{
 
   /* Grids */
 
-  #navHeader {  display: grid;
+  #nav-header {  display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 5px 5px;

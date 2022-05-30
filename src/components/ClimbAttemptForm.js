@@ -1,4 +1,4 @@
-import BasicButtons from './Button';
+import BasicButton from './Button';
 import { useState } from 'react';
 import ClimbAttempt from './../data/ClimbAttempt';
 import AppContext from './AppContext';
@@ -47,8 +47,8 @@ function ClimbAttemptForm(props) {
         {climb && <>
             <div>{climb.id}</div>
             {!started && <>
-                <BasicButtons text='Get Started!' onClick={() => setStarted(true)} />
-                <BasicButtons text='Cancel' onClick={() => setClimb(null)} />
+                <BasicButton text='Get Started!' onClick={() => setStarted(true)} />
+                <BasicButton text='Cancel' onClick={() => setClimb(null)} />
             </> || <div>
                 {
                     tentativeElos
@@ -56,9 +56,9 @@ function ClimbAttemptForm(props) {
                         .map(e => { return { ...e, elo: (e.elo / 100).toFixed(2), delta: (e.delta / 100).toFixed(2) } })
                         .map(e => <div key={e.elo}>{e.outcome} -> {e.elo} ({e.delta > 0 ? '+' + e.delta : e.delta})</div>)
                 }
-                <BasicButtons text='Finished Cleanly' onClick={() => handleOutcomeChange(1)}/>
-                <BasicButtons text='Finished Dirty' onClick={() => handleOutcomeChange(0.5)}/>
-                <BasicButtons text="Didn't Finish" onClick={() => handleOutcomeChange(0)}/>
+                <BasicButton text='Finished Cleanly' onClick={() => handleOutcomeChange(1)}/>
+                <BasicButton text='Finished Dirty' onClick={() => handleOutcomeChange(0.5)}/>
+                <BasicButton text="Didn't Finish" onClick={() => handleOutcomeChange(0)}/>
             </div>
             }
         </>
