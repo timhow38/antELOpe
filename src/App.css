@@ -90,11 +90,6 @@
 html,
 body {
     background-color: #282c34;
-    color: #fff;
-    font-family: var(--main-font);
-}
-h1, h2, h3, p, a, div, input{
-    color: #fff !important;
     font-family: var(--main-font);
 }
  
@@ -105,7 +100,7 @@ h1, h2, h3, p, a, div, input{
     max-width: 100%;
 }
 
-.pageWrap {
+.page-wrap {
     height: -webkit-fill-available;
     height: -moz-available;
     height: fill-available;
