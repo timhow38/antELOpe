@@ -6,12 +6,12 @@ import History from './History';
 import LeaderBoards from './LeaderBoards';
 import GetClimbForm from './GetClimbForm';
 import { useContext } from 'react';
-import { Box, Grid, Paper } from '@mui/material';
+import { Typography, Grid, Paper } from '@mui/material';
 import './../styles/BodyRouter.css';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
-    return <Paper id='page-body' elevation={3}>
+    return context.user && <Paper id='page-body' elevation={3}>
         {(() => {
             switch (context.route) {
                 case 'rankedClimb':
@@ -25,9 +25,12 @@ function BodyRouter(props) {
                 case 'leaderBoards':
                     return <LeaderBoards />
                 case 'editClimbs':
-                    return <GetClimbForm />
+                    return <div>
+                        <Typography variant='h4'>Edit or add a climb</Typography>
+                        <GetClimbForm />
+                    </div>
                 default:
-                    return context.user && <Grid container spacing={2}>
+                    return <Grid container spacing={2}>
                         <Grid item xs={6}>
                             <RoutingButton text="Ranked Climb" routeTarget={'rankedClimb'} />
                         </Grid>
@@ -48,8 +51,9 @@ function BodyRouter(props) {
                         </Grid>
                     </Grid>
             }
-        })()}
-    </Paper>
+        })()
+        }
+    </Paper >
 }
 
 export default BodyRouter;

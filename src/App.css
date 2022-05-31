@@ -96,10 +96,9 @@ body {
 #root {
     height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
-    margin: 0 auto;
     max-width: 100%;
+    margin: 0 auto;
     padding: 10px;
-    text-align: center;
 }
 
 /* When the browser is at least 1000px and above set #root max width to half the page */

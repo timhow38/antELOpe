@@ -2,7 +2,6 @@ import AppContext from './AppContext';
 import { useContext, useState } from 'react';
 import { reduceElo } from './../data/EloTools';
 import { Typography } from '@mui/material';
-import './../styles/CurrentElo.css';
 
 function CurrentElo(props) {
 	let [context, setContext] = useContext(AppContext);
