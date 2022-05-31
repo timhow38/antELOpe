@@ -1,6 +1,6 @@
 import AppContext from './AppContext';
 import { useState, useContext } from 'react';
-import BasicButton from './BasicButton';
+import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 
 function EditClimbForm(props) {
@@ -40,8 +40,8 @@ function EditClimbForm(props) {
             }} />
         </div>
 
-        <BasicButton text='Save' onClick={() => save()} />
-        <BasicButton text='Cancel' onClick={() => cancel()} />
+        <Button onClick={() => save()} >Save</Button>
+        <Button onClick={() => cancel()} >Cancel</Button>
     </div>
 }
 

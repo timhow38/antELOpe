@@ -1,6 +1,7 @@
 import RoutingButton from './RoutingButton';
 import Login from './Login';
 import CurrentElo from './CurrentElo';
+import './../styles/Header.css'
 
 function Header(props) {
     return <>

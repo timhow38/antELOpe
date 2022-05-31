@@ -4,8 +4,9 @@ import BodyRouter from './components/BodyRouter';
 import React, { useState } from 'react'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { blue } from '@mui/material/colors';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from "@mui/material/CssBaseline";
+import muiTheme from './styles/MuiTheme';
 import AppContext from './components/AppContext';
 import config from './config';
 
@@ -17,24 +18,10 @@ function App() {
         db: getFirestore(firebaseApp)
     });
 
-    const theme = createTheme({
-        palette: {
-            text: {
-                primary: '#fff',
-                secondary: '#fff',
-            },
-            primary: {
-                main: blue[800],
-            },
-            secondary: {
-                main: blue[500],
-            },
-        }
-    });
-
     return (
-        <ThemeProvider theme={theme}>
-            <AppContext.Provider className="page-wrap" value={[context, setContext]}>
+        <ThemeProvider theme={muiTheme}>
+            <AppContext.Provider value={[context, setContext]}>
+                <CssBaseline />
                 <Header />
                 <BodyRouter />
             </AppContext.Provider>
