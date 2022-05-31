@@ -6,11 +6,13 @@ import History from './History';
 import LeaderBoards from './LeaderBoards';
 import EditClimbs from './EditClimbs';
 import { useContext } from 'react';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
     return <>
-        <div id='pageBody'>
+        <Paper id='page-body' elevation={3}>
             {(() => {
                 switch (context.route) {
                     case 'rankedClimb':
@@ -27,22 +29,20 @@ function BodyRouter(props) {
                         return <EditClimbs />
                     default:
                         return context.user && <>
-                            <div>
-                                <RoutingButton text="Start a ranked climb" routeTarget={'rankedClimb'} />
-                                <RoutingButton text="Start a casual climb" routeTarget={'casualClimb'} />
-                                <RoutingButton text="Time a hangboard hang" routeTarget={'hangboardTimer'} />
-                            </div>
-                            <div>
+                            <Stack direction="row" spacing={2}>
+                                <RoutingButton text="Ranked Climb" routeTarget={'rankedClimb'} />
+                                <RoutingButton text="Casual Climb" routeTarget={'casualClimb'} />
+                                <RoutingButton text="Hangboard Timer" routeTarget={'hangboardTimer'} />
+                            </Stack>
+                            <Stack direction="row" spacing={2}>
                                 <RoutingButton text="My History" routeTarget={'history'} />
                                 <RoutingButton text="Leaderboards" routeTarget={'leaderBoards'} />
-                            </div>
-                            <div>
                                 <RoutingButton text="Edit Climbs" routeTarget={'editClimbs'} />
-                            </div>
+                            </Stack>
                         </>
                 }
             })()}
-        </div>
+        </Paper>
     </>
 }
 

@@ -1,4 +1,4 @@
-import Button from './Button';
+import BasicButton from './BasicButton';
 import { useState, useEffect, useContext } from 'react';
 import AppContext from './AppContext';
 import HangboardTime from '../data/HangboardTime';
@@ -26,8 +26,8 @@ function HangboardTimer(props) {
     return <>
         <div>{(time ?? 0).toFixed(1)}</div>
         {!running && time > 0 && <div>Recorded a time of: {time.toFixed(1)}s</div>}
-        {!running && <Button text='Start' onClick={() => start()} />
-            || <Button text='Finish' onClick={() => stopAndRecord()} />}
+        {!running && <BasicButton text='Start' onClick={() => start()} />
+            || <BasicButton text='Finish' onClick={() => stopAndRecord()} />}
 
     </>;
 }

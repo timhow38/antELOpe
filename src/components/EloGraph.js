@@ -93,9 +93,9 @@ function EloGraph(props) {
                 grid: {
                     color: function (context) {
                         if (context.tick.value % 1 === 0) {
-                            return 'rgba(75, 192, 192, 1)';
+                            return 'rgba(255, 255, 255, 1)';
                         } else {
-                            return 'rgba(75, 192, 192, 0.2)';
+                            return 'rgba(255, 255, 255, 0.2)';
                         }
                     }
                 }
@@ -136,9 +136,10 @@ function EloGraph(props) {
             }
         }
     }]
-    return <div className='eloGraph'>
-        <Line data={data} options={options} plugins={plugins} />
-    </div>
+    return <>
+        <div className='elo-graph'>
+            <Line data={data} options={options} plugins={plugins} />
+        </div>
+    </>
 }
-
 export default EloGraph;

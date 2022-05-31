@@ -8,6 +8,7 @@ import AppContext from './components/AppContext';
 import config from './config';
 import VisualClimbSelector from './components/VisualClimbSelector';
 
+
 function App() {
     let firebaseApp = initializeApp(config);
     let [context, setContext] = useState({
