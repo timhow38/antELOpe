@@ -1,10 +1,8 @@
 import { useState, useContext } from 'react';
-import BasicButton from './BasicButton';
+import { Button, TextField, Grid } from '@mui/material';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
-import TextField from '@mui/material/TextField';
-import VisualClimbSelector from './VisualClimbSelector';
 
 function GetClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -41,19 +39,22 @@ function GetClimbForm(props) {
 
     return <>
         {props.title && <div>Edit a Climb</div>}
-        {!climb && <>
-            <VisualClimbSelector successCallback={gotClimb}/>
-            <TextField label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
-            <TextField label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
-        </>
+        {!climb && <Grid container spacing={2}>
+            <Grid item xs={6}>
+                <TextField sx={{ width: '100%' }} label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
+            </Grid>
+            <Grid item xs={6}>
+                <TextField sx={{ width: '100%' }} label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
+            </Grid>
+        </Grid>
         }
         {
             newClimb && !climb && <div>
-                <BasicButton text='Climb not found. Add it?' onClick={() => addNewClimb()}/>
+                <Button onClick={() => addNewClimb()}>Climb not found. Add it?</Button>
             </div>
         }
         {
-            climb && <EditClimbForm climb={climb} successCallback={gotClimb} failCallback={() => setClimb(null)}/>
+            climb && <EditClimbForm climb={climb} successCallback={gotClimb} failCallback={() => setClimb(null)} />
         }
     </>;
 

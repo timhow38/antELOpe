@@ -87,30 +87,18 @@
         overflow: hidden !important;
     }
 }
+
 html,
 body {
-    background-color: #282c34;
-    color: #fff;
-    font-family: var(--main-font);
+    margin: 0;
 }
-h1, h2, h3, p, a, div, input{
-    color: #fff !important;
-    font-family: var(--main-font);
-}
- 
+
 #root {
     height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
-    margin: 0 auto;
     max-width: 100%;
-}
-
-.pageWrap {
-    height: -webkit-fill-available;
-    height: -moz-available;
-    height: fill-available;
-    padding: 15px;
-    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 /* When the browser is at least 1000px and above set #root max width to half the page */
@@ -118,37 +106,4 @@ h1, h2, h3, p, a, div, input{
     #root {
         max-width: 50%;
     }
-  }
-
-#page-body {
-    padding: 15px;
-    background-color: #1d2025;
 }
-
-.module-item {
-    align-items: center;
-    display: flex;
-    height: 20%;
-    justify-content: center;
-  }
-
-
-
-
-  /* Grids */
-  #nav-header {  
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 5px 5px;
-    grid-auto-flow: row;
-    grid-template-areas:
-    "btn-nav btn-login"
-    "str-score str-score";
-  }
-  
-  .btn-nav { grid-area: btn-nav; }
-  
-  .btn-login { grid-area: btn-login; }
-  
-  .str-score { grid-area: str-score; }
