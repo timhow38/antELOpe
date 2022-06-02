@@ -10,6 +10,7 @@ class IdMappedObject {
 		for (const prop in data) {
 			this[prop] = data[prop];
 		}
+		return this;
 	}
 
 	toDoc() {

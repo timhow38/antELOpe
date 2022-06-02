@@ -3,7 +3,8 @@ import BasicButton from './BasicButton';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
-import TextField from '@mui/material/TextField'; 
+import TextField from '@mui/material/TextField';
+import VisualClimbSelector from './VisualClimbSelector';
 
 function GetClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -41,6 +42,7 @@ function GetClimbForm(props) {
     return <>
         {props.title && <div>Edit a Climb</div>}
         {!climb && <>
+            <VisualClimbSelector successCallback={gotClimb}/>
             <TextField label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
             <TextField label="Colour" variant="outlined" placeholder='Colour' value={colour} onChange={(e) => setColour(e.target.value)} onBlur={() => handleClimbChanged()} />
         </>
