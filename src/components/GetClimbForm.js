@@ -3,6 +3,7 @@ import { Button, TextField, Grid } from '@mui/material';
 import Climb from './../data/Climb';
 import AppContext from './AppContext';
 import EditClimbForm from './EditClimbForm';
+import VisualClimbSelector from './VisualClimbSelector';
 
 function GetClimbForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -39,6 +40,7 @@ function GetClimbForm(props) {
 
     return <>
         {props.title && <div>Edit a Climb</div>}
+        {!climb && <VisualClimbSelector />}
         {!climb && <Grid container spacing={2}>
             <Grid item xs={6}>
                 <TextField sx={{ width: '100%' }} label="Rope" variant="outlined" placeholder='Rope' value={rope} onChange={(e) => setRope(e.target.value)} />
