@@ -16,6 +16,10 @@ const filters = {
     hangboardTimes: users => {
         users.map(user => user.events = (user.events ?? []).filter(i => i.type == 'HangboardTime'));
         return users;
+    },
+    completedClimbs: users => {
+        users.map(user => user.events = (user.events ?? []).filter(i => i.type == 'ClimbAttempt' && i.outcome > 0));
+        return users;
     }
 }
 
@@ -27,9 +31,13 @@ const scoreMaps = {
     },
     eloHistory: users => {
         users = filters.rankedClimbs(users);
-        console.log(users);
         users = users.map(user => new UserScore(user.id, reduceEloHistory(user.events, user.baseRating).map(i => eloToGrade(i.currentElo))));
-        console.log(users);
+        return users;
+    },
+    // Context will not work outside a component, you MUST join climbs to their heights in the users object before using this
+    heightClimbed: users => {
+        users = filters.completedClimbs(users);
+        users = users.map(user => new UserScore(user.id, user.events.map(i => i.height)));
         return users;
     }
 }
