@@ -65,10 +65,10 @@ function ClimbAttemptForm(props) {
                             <Button variant='contained' onClick={() => handleOutcomeChange(1)} >Finished Cleanly</Button>
                         </Grid>
                         <Grid item xs={4}>
-                            <Button variant='contained' onClick={() => handleOutcomeChange(1)} >Finished Dirty</Button>
+                            <Button variant='contained' onClick={() => handleOutcomeChange(0.5)} >Finished Dirty</Button>
                         </Grid>
                         <Grid item xs={4}>
-                            <Button variant='contained' onClick={() => handleOutcomeChange(1)} >Didn't Finish</Button>
+                            <Button variant='contained' onClick={() => handleOutcomeChange(0)} >Didn't Finish</Button>
                         </Grid>
                     </Grid>
                 </div>
