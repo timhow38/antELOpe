@@ -187,7 +187,7 @@ function ClimbSelectorCard(props) {
         }
     }
 
-    // This can be removed after all climbs have been mapped
+    // TODO: This can be removed after all climbs have been mapped
     if (!props.climb)
         return (!newClimb && <div className='climb-selector-card-container climb-selector-add-new-container' onClick={() => setNewClimb(true)}> + </div>)
             ||
