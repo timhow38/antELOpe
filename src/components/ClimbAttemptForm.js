@@ -3,8 +3,8 @@ import { useState } from 'react';
 import ClimbAttempt from './../data/ClimbAttempt';
 import AppContext from './AppContext';
 import { useContext } from 'react';
-import GetClimbForm from './GetClimbForm';
 import { getNextElo, reduceElo } from './../data/EloTools';
+import VisualClimbSelector from './VisualClimbSelector';
 
 function ClimbAttemptForm(props) {
     let [context, setContext] = useContext(AppContext);
@@ -43,7 +43,7 @@ function ClimbAttemptForm(props) {
 
     return <>
         <Typography variant='h4'>Climbing {props.ranked ? 'Ranked' : 'Casual'}</Typography>
-        {!climb && <GetClimbForm callback={setClimb} />}
+        {!climb && <VisualClimbSelector successCallback={setClimb} />}
         {climb && <>
             <Typography variant='h6'>{climb.id}</Typography>
             {(!started && <Grid container spacing={2}>

@@ -32,8 +32,8 @@ class IdMappedObject {
 		return obj;
 	}
 
-	persist(db) {
-		setDoc(doc(db, this.constructor.collectionId, this.id), this.toDoc(), { merge: true });
+	async persist(db) {
+		await setDoc(doc(db, this.constructor.collectionId, this.id), this.toDoc(), { merge: true });
 	}
 }
 

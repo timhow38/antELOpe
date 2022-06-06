@@ -4,7 +4,7 @@ import ClimbAttemptForm from './ClimbAttemptForm';
 import AppContext from './AppContext';
 import History from './History';
 import LeaderBoards from './LeaderBoards';
-import GetClimbForm from './GetClimbForm';
+import EditClimbForm from './EditClimbForm';
 import { useContext } from 'react';
 import { Typography, Grid, Paper } from '@mui/material';
 import './../styles/BodyRouter.css';
@@ -27,7 +27,7 @@ function BodyRouter(props) {
                 case 'editClimbs':
                     return <div>
                         <Typography variant='h4'>Edit or add a climb</Typography>
-                        <GetClimbForm />
+                        <EditClimbForm />
                     </div>
                 default:
                     return <Grid container spacing={2}>
