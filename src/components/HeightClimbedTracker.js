@@ -52,7 +52,6 @@ function HeightClimbedTracker(props) {
             Rc.aggregators.sum
         ])([context.user])[0];
 
-        console.log(result);
         setTotalHeight(result.finalScore);
     }
 
