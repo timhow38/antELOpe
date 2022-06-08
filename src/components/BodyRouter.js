@@ -5,12 +5,15 @@ import AppContext from './AppContext';
 import History from './History';
 import LeaderBoards from './LeaderBoards';
 import EditClimbForm from './EditClimbForm';
+import FontTester from './FontTester';
 import { useContext } from 'react';
 import { Typography, Grid, Paper } from '@mui/material';
 import './../styles/BodyRouter.css';
 
 function BodyRouter(props) {
     let [context, setContext] = useContext(AppContext);
+    if (context.route === 'fontTester')
+        return <FontTester />
     return context.user && <Paper id='page-body' elevation={3}>
         {(() => {
             switch (context.route) {
@@ -29,6 +32,8 @@ function BodyRouter(props) {
                         <Typography variant='h4'>Edit or add a climb</Typography>
                         <EditClimbForm />
                     </div>
+                case 'fontTester':
+                    return <FontTester />
                 default:
                     return <Grid container spacing={2}>
                         <Grid item xs={6}>
@@ -48,6 +53,9 @@ function BodyRouter(props) {
                         </Grid>
                         <Grid item xs={4}>
                             <RoutingButton text="Edit Climbs" routeTarget={'editClimbs'} />
+                        </Grid>
+                        <Grid item xs={4}>
+                            <RoutingButton text="Fonts!" routeTarget={'fontTester'} />
                         </Grid>
                     </Grid>
             }
