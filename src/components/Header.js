@@ -3,24 +3,23 @@ import Login from './Login';
 import CurrentElo from './CurrentElo';
 import { useContext } from 'react';
 import AppContext from './AppContext';
-import { Grid } from '@mui/material';
+
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+
 
 function Header(props) {
     let [context, setContext] = useContext(AppContext);
 
     return <div id='nav-header'>
         {(
-            context.user && <Grid container spacing={2}>
-                <Grid item xs={4}>
-                    <Login />
-                </Grid>
-                <Grid item xs={4}>
-                    <CurrentElo />
-                </Grid>
-                <Grid item xs={4}>
-                    <RoutingButton text='Home' routeTarget='' />
-                </Grid>
-            </Grid>
+             context.user && <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+             <Toolbar>
+             <Login />
+               <CurrentElo />
+               <RoutingButton text='Home' routeTarget='' />
+             </Toolbar>
+           </AppBar>
         ) || <Login sx={{ width: '100%' }}/>}
     </div>
 }

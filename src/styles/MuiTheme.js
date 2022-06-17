@@ -11,7 +11,7 @@ const muiTheme = createTheme({
         },
         background: {
             default: '#282c34',
-            paper: 'rgba(88,88,88,0.63)',
+            paper: 'rgba(88,88,88,1)',
         },
     },
 });
