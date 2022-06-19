@@ -43,7 +43,6 @@ function LeaderBoards(props) {
     }, [users]);
 
     return <>
-        
         {users && <>
             <LongestHang users={users} />
             <CurrentGrade users={users} />
