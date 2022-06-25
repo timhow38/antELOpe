@@ -99,6 +99,10 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: 10px;
+    background-image: url(./images/antelope-backdrop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 600px 200px;
 }
 
 /* When the browser is at least 1000px and above set #root max width to half the page */
