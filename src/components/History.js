@@ -2,6 +2,7 @@ import AppContext from './AppContext';
 import { useContext } from 'react';
 import EloGraph from './EloGraph';
 import HeightClimbedTracker from './HeightClimbedTracker';
+import { Typography } from '@mui/material';
 
 function History(props) {
     function transformTime(timeStr) {
@@ -12,7 +13,7 @@ function History(props) {
     let rankedClimbs = context.user.events.filter(event => event.type === 'ClimbAttempt' && event.ranked);
 
     return <>
-        <h2>Ranked Climbs</h2>
+        <Typography variant="h6">Current History</Typography>
         <EloGraph events={rankedClimbs} baseRating={context.user.baseRating} />
         <HeightClimbedTracker height={100}/>
         <h2>Casual Climbs</h2>

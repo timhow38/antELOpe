@@ -1,7 +1,7 @@
 import AppContext from './AppContext';
 import { useContext } from 'react';
 import User from './../data/User';
-import TextField from '@mui/material/TextField'; 
+import TextField from '@mui/material/TextField';
 
 function Login(props) {
     let [context, setContext] = useContext(AppContext);
@@ -22,6 +22,10 @@ function Login(props) {
 
     let textLabel = context.user ? "Logged in as" : "Enter Your Name";
 
-    return <TextField sx={props.sx} label={textLabel} variant="outlined" onBlur={handleUserNameChange} value={userName || context.user?.id} disabled={!!context.user}/>
+    return context.user ? (
+        null
+    ) : (
+        <TextField sx={props.sx} label={textLabel} variant="outlined" onBlur={handleUserNameChange} value={userName || context.user?.id} disabled={!!context.user}/>
+    );
 }
 export default Login;

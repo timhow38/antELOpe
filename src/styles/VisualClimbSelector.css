@@ -1,7 +1,7 @@
 .climb-selector-background {
     --border-bevel-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.4);
-    margin: 15px;
+    background-color: transparent;
+    width: 100%;
 }
 
 .climb-selector-container {
@@ -16,11 +16,18 @@
 
 .climb-grid-section {
     padding: 10px;
+    border-radius: 10px;
     background-color: #1976d2;
+    -webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+    
+
 }
 
 .no-climbs {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(187 0 0 / 55%);
+
 }
 
 .rope-selector-container {
@@ -44,6 +51,7 @@
 }
 
 .climb-selector-card-container {
+    float: left;
     width: 100px;
     height: 100px;
     text-align: center;
@@ -51,13 +59,14 @@
     margin: 15px;
     border: 3px solid black;
     border-radius: 5px;
-    background-color: dimgrey;
+    background-color: #43464d;
     font-weight: 700;
-}
+  }
+  
 
 .climb-selector-add-new-container {
-    border: 3px dashed grey;
-    color: grey;
+    border: 3px dashed #2277d9;
+    color: #2277d9;
     font-size: 45px;
     line-height: 90px;
 }

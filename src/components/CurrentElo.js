@@ -10,7 +10,7 @@ function CurrentElo(props) {
 	if (context.user) {
 		elo = reduceElo(context.user.events.filter(i => i.type === 'ClimbAttempt' && i.ranked), context.user.baseRating);
 	}
-	return <Typography variant='h6' className='current-elo'>{context.user && (props.text || 'Current Ranking: ') + (elo / 100).toFixed(2)}</Typography>;
+	return <Typography variant='h6' className='current-elo'>{context.user && (props.text || 'CR: ') + (elo / 100).toFixed(2)}</Typography>;
 }
 
 export default CurrentElo;
