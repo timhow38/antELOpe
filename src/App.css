@@ -84,7 +84,6 @@
 @-moz-document url-prefix() {
     html,
     body {
-        overflow: hidden !important;
     }
 }
 
@@ -97,8 +96,6 @@ body {
     height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
     max-width: 100%;
-    margin: 0 auto;
-    padding: 10px;
     background-image: url(./images/antelope-backdrop.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -108,6 +105,6 @@ body {
 /* When the browser is at least 1000px and above set #root max width to half the page */
 @media screen and (min-width: 1000px) {
     #root {
-        max-width: 50%;
+      
     }
 }

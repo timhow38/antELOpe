@@ -31,22 +31,16 @@ function BodyRouter(props) {
                     </div>
                 default:
                     return <Grid container spacing={2}>
-                        <Grid item xs={6}>
+                        <Grid item xs={12}>
                             <RoutingButton text="Ranked Climb" routeTarget={'rankedClimb'} />
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item xs={12}>
                             <RoutingButton text="Casual Climb" routeTarget={'casualClimb'} />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={12}>
                             <RoutingButton text="Hangboard Timer" routeTarget={'hangboardTimer'} />
                         </Grid>
-                        <Grid item xs={4}>
-                            <RoutingButton text="My History" routeTarget={'history'} />
-                        </Grid>
-                        <Grid item xs={4}>
-                            <RoutingButton text="Leaderboards" routeTarget={'leaderBoards'} />
-                        </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={12}>
                             <RoutingButton text="Edit Climbs" routeTarget={'editClimbs'} />
                         </Grid>
                     </Grid>

@@ -42,7 +42,7 @@ function ClimbAttemptForm(props) {
     }
 
     return <>
-        <Typography variant='h4'>Climbing {props.ranked ? 'Ranked' : 'Casual'}</Typography>
+        <Typography variant='h6'>{props.ranked ? 'Ranked' : 'Casual'} Climbing</Typography>
         {!climb && <VisualClimbSelector successCallback={setClimb} />}
         {climb && <>
             <Typography variant='h6'>{climb.id}</Typography>

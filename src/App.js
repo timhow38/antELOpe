@@ -1,14 +1,52 @@
 import './App.css';
-import Header from './components/Header';
+import NavMenu from './components/NavMenu';
 import BodyRouter from './components/BodyRouter';
 import React, { useState } from 'react'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
-import muiTheme from './styles/MuiTheme';
 import AppContext from './components/AppContext';
 import config from './config';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#2277d9',
+        },
+        secondary: {
+            main: '#f50057',
+        },
+        background: {
+            default: '#282c34',
+        },
+    },
+  components: {
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: false,
+      },
+    },
+    MuiPaper: {
+        styleOverrides: {
+            root: {
+                backgroundColor: '#282c34bf',
+            },
+        },
+    },
+    MuiBottomNavigation: {
+        styleOverrides: {
+            root: {
+                backgroundColor: '#2277d9',
+            },
+        },
+    },
+
+  },
+});
+
 
 function App() {
     let firebaseApp = initializeApp(config);
@@ -19,11 +57,11 @@ function App() {
     });
 
     return (
-        <ThemeProvider theme={muiTheme}>
+        <ThemeProvider theme={theme}>
             <AppContext.Provider value={[context, setContext]}>
-                <CssBaseline />
-                <Header />
-                <BodyRouter />
+            <CssBaseline />
+            <NavMenu />
+            <BodyRouter />
             </AppContext.Provider>
         </ThemeProvider>
     );
