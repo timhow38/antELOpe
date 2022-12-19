@@ -22,10 +22,6 @@ function Login(props) {
 
     let textLabel = context.user ? "Logged in as" : "Enter Your Name";
 
-    return context.user ? (
-        null
-    ) : (
-        <TextField sx={props.sx} label={textLabel} variant="outlined" onBlur={handleUserNameChange} value={userName || context.user?.id} disabled={!!context.user}/>
-    );
+    return <TextField sx={props.sx} label={textLabel} variant="outlined" onBlur={handleUserNameChange} value={userName || context.user?.id} disabled={!!context.user}/>
 }
 export default Login;

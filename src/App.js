@@ -1,5 +1,5 @@
 import './App.css';
-import NavaMenu from './components/NavaMenu';
+import NavMenu from './components/NavMenu';
 import BodyRouter from './components/BodyRouter';
 import React, { useState } from 'react'
 import { initializeApp } from "firebase/app";
@@ -24,11 +24,9 @@ const theme = createTheme({
         },
     },
   components: {
-    // Name of the component
     MuiButtonBase: {
       defaultProps: {
-        // The props to change the default for.
-        disableRipple: false, // No more ripple, on the whole application 💣!
+        disableRipple: false,
       },
     },
     MuiPaper: {
@@ -62,11 +60,10 @@ function App() {
         <ThemeProvider theme={theme}>
             <AppContext.Provider value={[context, setContext]}>
             <CssBaseline />
-            <NavaMenu />
+            <NavMenu />
             <BodyRouter />
             </AppContext.Provider>
         </ThemeProvider>
-        
     );
 }
 

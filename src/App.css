@@ -96,7 +96,6 @@ body {
     height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
     max-width: 100%;
-    /* margin: 0 auto; */
     background-image: url(./images/antelope-backdrop.svg);
     background-position: center;
     background-repeat: no-repeat;
