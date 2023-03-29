@@ -11,6 +11,7 @@ function Login(props) {
         userName = event.target.value;
         if (userName)
             retrieveUserData(userName);
+            document.title = `Antelope: ${userName}`;
     }
 
     async function retrieveUserData(userName) {

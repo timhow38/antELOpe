@@ -2,6 +2,7 @@ import AppContext from './AppContext';
 import { useContext, useState, useEffect } from 'react';
 import { collection, query, getDocs } from "firebase/firestore";
 import * as Rc from './../data/ReducerComposer';
+import HeightClimbedTracker from './HeightClimbedTracker';
 
 
 function LongestHang(props) {
@@ -46,6 +47,7 @@ function LeaderBoards(props) {
         {users && <>
             <LongestHang users={users} />
             <CurrentGrade users={users} />
+            <HeightClimbedTracker height={100}/>
         </>}
     </>
 }

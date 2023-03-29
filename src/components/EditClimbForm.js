@@ -33,6 +33,7 @@ function EditClimbForm(props) {
     }
 
     return <div>
+        <h2>Edit or add a climb</h2>
         <TextField
             variant="outlined"
             value={rope}

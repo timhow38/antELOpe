@@ -59,10 +59,10 @@ function HeightClimbedTracker(props) {
         retrieveHeight();
 
     return <>
-        <Typography variant='h4'>Total Height Climbed</Typography>
+        <h2>Total Height Climbed</h2>
         {totalHeight && <>
             <div>{totalHeight.toFixed(1)} m</div>
-            <Typography variant='h6'>Milestones:</Typography>
+            <h2>Milestones:</h2>
             {Object.entries({ ...milestones, 'You': totalHeight })
                 .sort(([_A, heightA], [_B, heightB]) => heightA > heightB ? -1 : 1)
                 .map(([name, height]) => <div key={name} style={name == 'You' ? { textDecorationLine: 'underline' } : {}}>{name}: {height.toFixed(1)}m</div>)}

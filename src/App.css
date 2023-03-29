@@ -108,3 +108,49 @@ body {
       
     }
 }
+
+  
+  div.scrollable::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+  
+  div.scrollable::-webkit-scrollbar-thumb {
+    background-color: #2277d9;
+  }
+  
+  table {
+    /* Add the necessary styles for the table */
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  /* Add the necessary styles for the table header to be fixed */
+thead {
+    position: sticky;
+    top: 0;
+    background-color: #2277d9;
+  }
+  
+  th,
+  td {
+    /* Add the necessary styles for the table cells */
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    /* Add the necessary styles for the table rows */
+    background-color: #2277d96b;
+  }
+  
+  /* Add the necessary styles for the table to be scrollable */
+  .scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 600px;
+    border: 3px solid #2277d9;
+    border-radius: 3px;
+    background-color: #282c34;
+  }
+  

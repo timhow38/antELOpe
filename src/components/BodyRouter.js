@@ -26,7 +26,6 @@ function BodyRouter(props) {
                     return <LeaderBoards />
                 case 'editClimbs':
                     return <div>
-                        <Typography variant='h4'>Edit or add a climb</Typography>
                         <EditClimbForm />
                     </div>
                 default:
